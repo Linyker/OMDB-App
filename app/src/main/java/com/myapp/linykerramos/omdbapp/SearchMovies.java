@@ -13,7 +13,7 @@ import android.view.ViewGroup;
  */
 public class SearchMovies extends Fragment {
 
-
+    View viewSearchMovies = null;
     public SearchMovies() {
         // Required empty public constructor
     }
@@ -23,7 +23,9 @@ public class SearchMovies extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search_movies, container, false);
+        viewSearchMovies = inflater.inflate(R.layout.fragment_search_movies, container, false);
+
+        return viewSearchMovies;
     }
 
 }

@@ -3,6 +3,7 @@ package com.myapp.linykerramos.omdbapp;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,22 +19,24 @@ public class MainActivity extends AppCompatActivity
 
     NavigationView navigationView = null;
     Toolbar toolbar = null;
-    
+    FragmentTransaction fragmentTransaction = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Setando fragment inicial
+        RegisteredMovies registeredMoviesFragment = new RegisteredMovies();
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
+        fragmentTransaction.replace(R.id.fragment_container,registeredMoviesFragment);
+        fragmentTransaction.commit();
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -83,9 +86,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
         if (id == R.id.search_movies) {
-            // Handle the camera action
+            SearchMovies searchMovies = new SearchMovies();
+            fragmentTransaction.replace(R.id.fragment_container,searchMovies).commit();
+
         } else if (id == R.id.registered_movies) {
+            RegisteredMovies registeredMovies = new RegisteredMovies();
+            fragmentTransaction.replace(R.id.fragment_container, registeredMovies).commit();
 
         } else if (id == R.id.nav_manage) {
 
