@@ -8,13 +8,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
+
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class RegisteredMovies extends Fragment {
+
 
     View viewRegisteredMovies = null;
 
@@ -29,6 +31,7 @@ public class RegisteredMovies extends Fragment {
 
         viewRegisteredMovies = inflater.inflate(R.layout.fragment_registered_movies, container, false);
 
+        final TextView texto = (TextView) viewRegisteredMovies.findViewById(R.id.texto);
         FloatingActionButton fab = (FloatingActionButton) viewRegisteredMovies.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +40,8 @@ public class RegisteredMovies extends Fragment {
                         .setAction("Action", null).show();
             }
         });
+
+
 
 
 

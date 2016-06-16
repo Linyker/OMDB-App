@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@color/LightSkyBlue"
+    >
+
+   <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/imageFilme"
+        android:layout_width="60dp"
+        android:layout_height="82dp"
+        android:background="#ffffff"
+        android:scaleType="centerCrop"
+        android:src="@drawable/movie" />
+
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageFilme"
+        android:layout_alignTop="@+id/imageFilme"
+        android:text="Titulo"
+        android:textSize="20sp"
+        android:textColor="#333333"
+        android:paddingLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/textYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textTitle"
+        android:layout_toRightOf="@+id/imageFilme"
+        android:text="Ano"
+        android:textColor="#333333"
+        android:paddingLeft="5dp"
+        />
+
+
+</RelativeLayout>

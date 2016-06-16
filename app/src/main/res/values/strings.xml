@@ -9,4 +9,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_searchMovies_fragment">Hello Search fragment</string>
     <string name="hello_registeredMovies_fragment">Hello Registered fragment</string>
+
+    <string name="texto_nomeFilme">Digite o nome do filme...</string>
 </resources>
