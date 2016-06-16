@@ -11,6 +11,8 @@
     <string name="hello_registeredMovies_fragment">Hello Registered fragment</string>
 
     <string name="texto_nomeFilme">Digite o nome do filme...</string>
+    <string name="meusFilmes">MEUS FILMES</string>
+    <string name="strFilmes">Quantidade de filmes cadastrados: </string>
     <string name="title_activity_movie">Movie</string>
     <string name="resumoFilme">Resumo do Filme</string>
     <string name="infoGerais">Informações Gerais</string>

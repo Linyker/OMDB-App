@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.myapp.linykerramos.omdbapp.Model.Filme;
 
@@ -48,7 +49,9 @@ public class FilmesDAO {
         return resultado;
     }
 
-    private List<Filme> getAllFilmes() {
+    public List<Filme> getAllFilmes() {
+
+        database = databaseHelper.getReadableDatabase();
 
         Cursor cursor = null;
         List<Filme> filmes = new ArrayList<Filme>();

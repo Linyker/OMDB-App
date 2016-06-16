@@ -5,11 +5,17 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.myapp.linykerramos.omdbapp.DAO.FilmesDAO;
+import com.myapp.linykerramos.omdbapp.Model.Filme;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -30,13 +36,21 @@ public class RegisteredMovies extends Fragment {
                              Bundle savedInstanceState) {
 
         viewRegisteredMovies = inflater.inflate(R.layout.fragment_registered_movies, container, false);
+        FilmesDAO filmesDAO = new FilmesDAO(getContext());
+        List<Filme> filmes;
 
+        filmes = filmesDAO.getAllFilmes();
+
+        TextView texto = (TextView) viewRegisteredMovies.findViewById(R.id.qtdFilmesCadastrados);
+
+        texto.setText(""+filmes.size());
         FloatingActionButton fab = (FloatingActionButton) viewRegisteredMovies.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                SearchMovies searchMovies = new SearchMovies();
+                fragmentTransaction.replace(R.id.fragment_container,searchMovies).commit();
             }
         });
 

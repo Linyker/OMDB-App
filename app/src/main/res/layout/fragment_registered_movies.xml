@@ -12,16 +12,55 @@
     android:layout_height="match_parent"
     tools:context="com.myapp.linykerramos.omdbapp.RegisteredMovies">
 
-    <Button
-        android:id="@+id/botao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Texto"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@color/LightSteelBlue"
+        android:text="@string/meusFilmes"
+        android:id="@+id/labelFilmesCadastrados"
         />
 
+    <LinearLayout
+        android:id="@+id/layoutQtdFilme"
+        android:layout_marginTop="5dp"
+        android:background="@color/LightSkyBlue"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_below="@id/labelFilmesCadastrados"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strFilmes"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:id="@+id/txtQtdFilmes"
+        android:layout_marginRight="15dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:text="000"
+        android:id="@+id/qtdFilmesCadastrados"
+        />
+    </LinearLayout>
 
-
-
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listaFilme"
+        android:layout_below="@id/layoutQtdFilme"
+        android:clickable="true"
+        android:layout_marginTop="5dp"
+        >
+    </ListView>
 
 </RelativeLayout>
 
