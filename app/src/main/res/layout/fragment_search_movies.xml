@@ -11,6 +11,8 @@
         android:background="@color/LightSteelBlue"
         android:id="@+id/edtBusca"
         android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="2dp"
         android:hint="@string/texto_nomeFilme">
 
         <requestFocus/>
@@ -22,7 +24,7 @@
         android:text="Buscar"
         android:id="@+id/botaoBusca"
         android:layout_below="@id/edtBusca"
-
+        android:background="@color/DodgerBlue"
 
         />
 
@@ -33,6 +35,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/listaFilme"
         android:layout_below="@id/botaoBusca"
+        android:clickable="true"
         >
 
     </ListView>

@@ -2,12 +2,14 @@ package com.myapp.linykerramos.omdbapp;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,6 +41,7 @@ public class SearchMovies extends Fragment {
     private String URL = "http://www.omdbapi.com/?s=";
     View viewSearchMovies = null;
     ProgressDialog progressDialog = null;
+    final List<Filme> filmes = new ArrayList<Filme>();
 
     public SearchMovies() {
         // Required empty public constructor
@@ -54,7 +57,7 @@ public class SearchMovies extends Fragment {
 
         final EditText busca = (EditText) viewSearchMovies.findViewById(R.id.edtBusca);
         final Button botaoBuscaFilme = (Button) viewSearchMovies.findViewById(R.id.botaoBusca);
-        final ListView lista = (ListView) viewSearchMovies.findViewById(R.id.listaFilme);
+        final ListView listView = (ListView) viewSearchMovies.findViewById(R.id.listaFilme);
 
 
         botaoBuscaFilme.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +75,7 @@ public class SearchMovies extends Fragment {
                                     @Override
                                     public void onResponse(JSONObject response) {
                                         try {
-                                            responseReturn[0] = response.get("Response").toString();
+                                            responseReturn[0] = response.get("Response").toString();//Response indica true ou false da requisiçao
                                         } catch (JSONException e) {
                                             e.printStackTrace();
                                         }
@@ -92,20 +95,34 @@ public class SearchMovies extends Fragment {
 
                                                     filmes[i] = titulo;
                                                 }*/
-                                                List<Filme> filmes = new ArrayList<Filme>();
+
                                                 for (int i = 0; i < resultados.length();i++){
                                                     JSONObject filmeObject = resultados.getJSONObject(i);
                                                     Filme filme = new Filme();
 
+                                                    filme.set_id(filmeObject.getString("imdbID"));
                                                     filme.setTitle(filmeObject.getString("Title"));
                                                     filme.setYear(filmeObject.getString("Year"));
                                                     filme.setPoster(filmeObject.getString("Poster"));
-                                                    filme.set_id(filmeObject.getString("imdbID"));
+
                                                     filmes.add(filme);
                                                 }
 
                                                 FilmeAdapter adapterfilme = new FilmeAdapter(getContext(), filmes);
-                                                lista.setAdapter(adapterfilme);
+                                                listView.setAdapter(adapterfilme);
+
+
+                                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                                    @Override
+                                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                     Log.e("ID",filmes.get(position).get_id());
+                                                        Intent i = new Intent(getContext(),Movie.class);
+                                                        i.putExtra("idFilme",filmes.get(position).get_id());
+                                                        i.putExtra("nomeFilme",filmes.get(position).getTitle());
+                                                        startActivity(i);
+                                                    }
+                                                });
+
 
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
@@ -130,6 +147,7 @@ public class SearchMovies extends Fragment {
                         );
                 RequestQueue fila = Volley.newRequestQueue(getContext());
                 fila.add(requisicao);
+
                 //initialize the progress dialog and show it
                 progressDialog = new ProgressDialog(getActivity());
                 progressDialog.setMessage("Buscando....");

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.myapp.linykerramos.omdbapp.Movie"
+    tools:showIn="@layout/activity_movie">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+
+        >
+
+    <TextView
+        android:id="@+id/labelResumo"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:text="@string/resumoFilme"
+        android:textSize="20dp"
+        android:gravity="center_vertical"
+        android:background="@color/LightSteelBlue"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        />
+    <TextView
+        android:id="@+id/txtResumo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelResumo"
+        android:layout_margin="8dp"
+        />
+
+
+        <TextView
+            android:id="@+id/txtInformacoesGerais"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="@string/infoGerais"
+            android:textSize="20dp"
+            android:gravity="center_vertical"
+            android:background="@color/LightSteelBlue"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/txtResumo"
+            />
+
+        <LinearLayout
+            android:layout_below="@+id/txtInformacoesGerais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <View   android:id="@+id/line1"
+            android:layout_height="1dp"
+            android:layout_width="fill_parent"
+            android:background="#cccccc" />
+
+        <TextView
+            android:id="@+id/txtAnoLancamento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="30dp"
+            android:text="teasdflasçdkfjaslçdkjfasçldkfj"
+            android:layout_margin="8dp"
+
+            />
+        <View   android:id="@+id/line2"
+            android:layout_height="1dp"
+            android:layout_width="fill_parent"
+            android:background="#cccccc" />
+
+        <TextView
+            android:id="@+id/txtGenero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="30dp"
+            android:text="asldkjflçaksjdfçlkjasdlçfkj"
+            android:layout_margin="8dp"
+
+            />
+        <View   android:id="@+id/line3"
+            android:layout_height="1dp"
+            android:layout_width="fill_parent"
+            android:background="#cccccc" />
+
+        <TextView
+            android:id="@+id/txtAutor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="30dp"
+            android:text="asldkjflçaksjdfçlkjasdlçfkj"
+            android:layout_margin="8dp"
+
+            />
+
+        <View   android:id="@+id/line4"
+            android:layout_height="1dp"
+            android:layout_width="fill_parent"
+            android:background="#cccccc" />
+
+        <TextView
+            android:id="@+id/txtAtores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="30dp"
+            android:text="asldkjflçaksjdfçlkjasdlçfkj"
+            android:layout_margin="8dp"
+
+            />
+        <View   android:id="@+id/line5"
+            android:layout_height="1dp"
+            android:layout_width="fill_parent"
+            android:background="#cccccc" />
+
+        <TextView
+            android:id="@+id/txtPremios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="30dp"
+            android:text="asldkjflçaksjdfçlkjasdlçfkj"
+            android:layout_margin="8dp"
+
+            />
+        <View   android:id="@+id/line6"
+            android:layout_height="1dp"
+            android:layout_width="fill_parent"
+            android:background="#cccccc" />
+
+        <TextView
+            android:id="@+id/txtNotas"
+            android:layout_width="match_parent"
+            android:minHeight="30dp"
+            android:layout_height="wrap_content"
+            android:text="asldkjflçaksjdfçlkjasdlçfkj"
+            android:layout_margin="8dp"
+             />
+        <View   android:id="@+id/line7"
+            android:layout_height="1dp"
+            android:layout_width="fill_parent"
+            android:background="#cccccc" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>

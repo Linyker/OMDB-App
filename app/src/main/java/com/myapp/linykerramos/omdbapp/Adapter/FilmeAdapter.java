@@ -71,10 +71,6 @@ public class FilmeAdapter extends BaseAdapter {
         mImageLoader.get(filme.getPoster(),ImageLoader.getImageListener(img,R.drawable.ic_menu_camera,android.R.drawable.ic_dialog_alert));
         img.setImageUrl(filme.getPoster(),mImageLoader);
 
-
-
-
-
         return view;
 
     }
