@@ -19,6 +19,7 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
+import com.myapp.linykerramos.omdbapp.DAO.FilmesDAO;
 import com.myapp.linykerramos.omdbapp.Model.Filme;
 import com.myapp.linykerramos.omdbapp.Volley.CustomVolleyRequestImage;
 
@@ -36,6 +37,7 @@ public class Movie extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         final Filme filme = new Filme();
+        final FilmesDAO filmesDAO = new FilmesDAO(getBaseContext());
 
         final NetworkImageView imageMovie = (NetworkImageView) findViewById(R.id.imageMovie);
         final TextView txtResumo = (TextView) findViewById(R.id.txtResumo);
@@ -134,8 +136,16 @@ public class Movie extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                long resultado = filmesDAO.insert(filme);
+                if(resultado != -1){
+                    Snackbar.make(view, "Filme cadastrado com sucesso!", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }else{
+                    Snackbar.make(view, "Erro ao cadastrar filme!", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+
             }
         });
     }

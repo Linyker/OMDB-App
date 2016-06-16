@@ -3,6 +3,7 @@ package com.myapp.linykerramos.omdbapp.DAO;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by Linyker Ramos on 14/06/2016.
@@ -34,9 +35,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //script criação tabela filmes
     private static final String CREATE_TABLE_FILMES = "CREATE TABLE " +TABLE_FILME +"("+
-            FILME_ID + " INTEGER PRIMARY KEY,"+
+            FILME_ID + " TEXT PRIMARY KEY,"+
             FILME_TITLE + " TEXT," +
-            FILME_YEAR + " INTEGER," +
+            FILME_YEAR + " TEXT," +
             FILME_RATED + " TEXT," +
             FILME_RELEASED + " TEXT," +
             FILME_RUNTIME + " TEXT," +
@@ -48,8 +49,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FILME_AWARDS + " TEXT," +
             FILME_POSTER + " TEXT," +
             FILME_METASCORE + " DOUBLE," +
-            FILME_IMDBRATING +" DOUBLE," +
-            ")";
+            FILME_IMDBRATING +" DOUBLE" +
+            ");";
 
     public DatabaseHelper(Context context){
         super(context,BANCO_DADOS,null,VERSAO);
