@@ -31,7 +31,6 @@ public class RegisteredMovies extends Fragment {
 
         viewRegisteredMovies = inflater.inflate(R.layout.fragment_registered_movies, container, false);
 
-        final TextView texto = (TextView) viewRegisteredMovies.findViewById(R.id.texto);
         FloatingActionButton fab = (FloatingActionButton) viewRegisteredMovies.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

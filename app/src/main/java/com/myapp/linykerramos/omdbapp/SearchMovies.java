@@ -53,11 +53,11 @@ public class SearchMovies extends Fragment {
 
 
         final EditText busca = (EditText) viewSearchMovies.findViewById(R.id.edtBusca);
-        final Button botaoBusca = (Button) viewSearchMovies.findViewById(R.id.botaoBusca);
+        final Button botaoBuscaFilme = (Button) viewSearchMovies.findViewById(R.id.botaoBusca);
         final ListView lista = (ListView) viewSearchMovies.findViewById(R.id.listaFilme);
 
 
-        botaoBusca.setOnClickListener(new View.OnClickListener() {
+        botaoBuscaFilme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String txtbusca = busca.getText().toString();
