@@ -13,4 +13,9 @@
     <color name="LightSkyBlue">#87CEFA</color>
     <color name="LightSteelBlue">#B0C4DE</color>
     <color name="DodgerBlue">#1E90FF</color>
+    <color name="DeepSkyBlue">#00BFFF</color>
+    <color name="cream">#F3F0D1</color>
+    <color name="grey">#CFE6EE</color>
+    <color name="gray">#CCCCCC</color>
+    <color name="aliceBlue">#F0F8FF</color>
 </resources>

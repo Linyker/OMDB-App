@@ -8,7 +8,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/LightSteelBlue"
+        android:background="@color/cream"
         android:id="@+id/edtBusca"
         android:singleLine="true"
         android:layout_marginTop="10dp"
@@ -21,10 +21,11 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buscar"
+        android:text="@string/botaoBuscaFilme"
+        android:textStyle="bold"
         android:id="@+id/botaoBusca"
         android:layout_below="@id/edtBusca"
-        android:background="@color/DodgerBlue"
+        android:background="@color/LightSkyBlue"
 
         />
 
@@ -33,7 +34,7 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listaFilme"
+        android:id="@+id/listaFilmeBusca"
         android:layout_below="@id/botaoBusca"
         android:clickable="true"
         >

@@ -18,20 +18,25 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:gravity="center"
-        android:background="@color/LightSteelBlue"
-        android:text="@string/meusFilmes"
+        android:background="@color/cream"
+        android:text="@string/meus_filmes"
         android:id="@+id/labelFilmesCadastrados"
+        />
+    <View   android:id="@+id/line1"
+        android:layout_height="1dp"
+        android:layout_width="fill_parent"
+        android:background="@color/gray"
+        android:layout_below="@id/labelFilmesCadastrados"
         />
 
     <LinearLayout
         android:id="@+id/layoutQtdFilme"
-        android:layout_marginTop="5dp"
-        android:background="@color/LightSkyBlue"
+        android:background="@color/grey"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_below="@id/labelFilmesCadastrados"
+        android:layout_below="@id/line1"
         >
     <TextView
         android:layout_width="wrap_content"
@@ -51,12 +56,18 @@
         android:id="@+id/qtdFilmesCadastrados"
         />
     </LinearLayout>
+    <View   android:id="@+id/line2"
+        android:layout_height="1dp"
+        android:layout_width="fill_parent"
+        android:background="@color/gray"
+        android:layout_below="@id/layoutQtdFilme"
+        />
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listaFilme"
-        android:layout_below="@id/layoutQtdFilme"
+        android:id="@+id/listaFilmeCadastrados"
+        android:layout_below="@id/line2"
         android:clickable="true"
         android:layout_marginTop="5dp"
         >

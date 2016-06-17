@@ -56,7 +56,7 @@ public class FilmeAdapter extends BaseAdapter {
         Filme filme = filmes.get(position);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.layout,null);
+        View view = inflater.inflate(R.layout.layout_listmovie,null);
 
         TextView title = (TextView) view.findViewById(R.id.textTitle);
         title.setText(filme.getTitle());

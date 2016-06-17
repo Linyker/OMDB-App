@@ -57,7 +57,7 @@ public class SearchMovies extends Fragment {
 
         final EditText busca = (EditText) viewSearchMovies.findViewById(R.id.edtBusca);
         final Button botaoBuscaFilme = (Button) viewSearchMovies.findViewById(R.id.botaoBusca);
-        final ListView listView = (ListView) viewSearchMovies.findViewById(R.id.listaFilme);
+        final ListView listView = (ListView) viewSearchMovies.findViewById(R.id.listaFilmeBusca);
 
 
         botaoBuscaFilme.setOnClickListener(new View.OnClickListener() {
@@ -115,7 +115,7 @@ public class SearchMovies extends Fragment {
                                                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                                     @Override
                                                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                                     Log.e("ID",filmes.get(position).get_id());
+                                                     //Log.e("ID",filmes.get(position).get_id());
                                                         Intent i = new Intent(getContext(),Movie.class);
                                                         i.putExtra("idFilme",filmes.get(position).get_id());
                                                         i.putExtra("nomeFilme",filmes.get(position).getTitle());
