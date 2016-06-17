@@ -1,13 +1,10 @@
 package com.myapp.linykerramos.omdbapp.Adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
@@ -16,10 +13,6 @@ import com.myapp.linykerramos.omdbapp.Model.Filme;
 import com.myapp.linykerramos.omdbapp.R;
 import com.myapp.linykerramos.omdbapp.Volley.CustomVolleyRequestImage;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
 /**
@@ -56,7 +49,7 @@ public class FilmeAdapter extends BaseAdapter {
         Filme filme = filmes.get(position);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.layout_listmovie,null);
+        View view = inflater.inflate(R.layout.layout_list_movie,null);
 
         TextView title = (TextView) view.findViewById(R.id.textTitle);
         title.setText(filme.getTitle());
