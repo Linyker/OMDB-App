@@ -22,7 +22,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Movie"
+            android:name=".MovieJson"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MovieSql"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

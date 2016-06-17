@@ -1,14 +1,18 @@
 package com.myapp.linykerramos.omdbapp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -16,6 +20,7 @@ import com.myapp.linykerramos.omdbapp.Adapter.FilmeAdapter;
 import com.myapp.linykerramos.omdbapp.DAO.FilmesDAO;
 import com.myapp.linykerramos.omdbapp.Model.Filme;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,7 +59,18 @@ public class RegisteredMovies extends Fragment {
         filmeAdapter = new FilmeAdapter(getContext(),filmes);
         listView.setAdapter(filmeAdapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                Filme filme = filmes.get(position);
+                Log.e("FILME",filmes.get(position).getTitle());
+                Intent i = new Intent(getContext(),MovieSql.class);
+                i.putExtra("filme", filme);
+                startActivity(i);
+
+            }
+        });
 
 
         FloatingActionButton fab = (FloatingActionButton) viewRegisteredMovies.findViewById(R.id.fab);

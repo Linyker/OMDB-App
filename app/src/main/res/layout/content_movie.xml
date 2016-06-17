@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.myapp.linykerramos.omdbapp.Movie"
+    tools:context=".MovieJson"
     tools:showIn="@layout/activity_movie">
 
     <RelativeLayout
@@ -64,7 +64,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="30dp"
-            android:text="teasdflasçdkfjaslçdkjfasçldkfj"
             android:layout_margin="8dp"
 
             />
@@ -78,7 +77,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="30dp"
-            android:text="asldkjflçaksjdfçlkjasdlçfkj"
             android:layout_margin="8dp"
 
             />
@@ -92,7 +90,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="30dp"
-            android:text="asldkjflçaksjdfçlkjasdlçfkj"
             android:layout_margin="8dp"
 
             />
@@ -107,7 +104,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="30dp"
-            android:text="asldkjflçaksjdfçlkjasdlçfkj"
             android:layout_margin="8dp"
 
             />
@@ -121,7 +117,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="30dp"
-            android:text="asldkjflçaksjdfçlkjasdlçfkj"
             android:layout_margin="8dp"
 
             />
@@ -135,7 +130,6 @@
             android:layout_width="match_parent"
             android:minHeight="30dp"
             android:layout_height="wrap_content"
-            android:text="asldkjflçaksjdfçlkjasdlçfkj"
             android:layout_margin="8dp"
              />
         <View   android:id="@+id/line7"

@@ -1,9 +1,11 @@
 package com.myapp.linykerramos.omdbapp.Model;
 
+import java.io.Serializable;
+
 /**
  * Created by Linyker Ramos on 15/06/2016.
  */
-public class Filme {
+public class Filme implements Serializable{
 
     private String _id;
     private String title;

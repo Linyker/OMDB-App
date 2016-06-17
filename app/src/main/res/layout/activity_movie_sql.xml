@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MovieJson">
+    tools:context="com.myapp.linykerramos.omdbapp.MovieSql">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
@@ -21,7 +21,6 @@
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
 
             <com.android.volley.toolbox.NetworkImageView
                 android:layout_width="80dp"
@@ -49,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_input_add"
+        android:src="@android:drawable/ic_input_delete"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end" />
 

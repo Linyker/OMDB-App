@@ -27,7 +27,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Movie extends AppCompatActivity {
+public class MovieJson extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,15 +136,23 @@ public class Movie extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                boolean retorno = filmesDAO.checkFilme(filme.get_id());
+                if(retorno == true) {
 
-                long resultado = filmesDAO.insert(filme);
-                if(resultado != -1){
-                    Snackbar.make(view, "Filme cadastrado com sucesso!", Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, "Filme já cadastrado na sua lista!", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }else{
-                    Snackbar.make(view, "Erro ao cadastrar filme!", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                    long resultado = filmesDAO.insert(filme);
+                    if(resultado != -1){
+                        Snackbar.make(view, "Filme cadastrado com sucesso!", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+                    }else{
+                        Snackbar.make(view, "Erro ao cadastrar filme!", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+                    }
                 }
+
+
 
             }
         });

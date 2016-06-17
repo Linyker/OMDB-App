@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -116,7 +115,7 @@ public class SearchMovies extends Fragment {
                                                     @Override
                                                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                                      //Log.e("ID",filmes.get(position).get_id());
-                                                        Intent i = new Intent(getContext(),Movie.class);
+                                                        Intent i = new Intent(getContext(),MovieJson.class);
                                                         i.putExtra("idFilme",filmes.get(position).get_id());
                                                         i.putExtra("nomeFilme",filmes.get(position).getTitle());
                                                         startActivity(i);

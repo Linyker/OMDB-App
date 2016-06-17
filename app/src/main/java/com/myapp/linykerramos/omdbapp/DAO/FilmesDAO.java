@@ -49,6 +49,22 @@ public class FilmesDAO {
         return resultado;
     }
 
+    public boolean checkFilme(String id){
+        database = databaseHelper.getReadableDatabase();
+        Cursor cursor = null;
+        int numRow = 0;
+
+        cursor = database.rawQuery("SELECT * FROM "+ DatabaseHelper.TABLE_FILME +" WHERE "+DatabaseHelper.FILME_ID +" LIKE '%"+id+"%'",null);
+
+        numRow = cursor.getCount();
+
+        if(numRow == 0){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     public List<Filme> getAllFilmes() {
 
         database = databaseHelper.getReadableDatabase();
