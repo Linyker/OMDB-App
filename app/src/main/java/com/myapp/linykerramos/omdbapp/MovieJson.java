@@ -144,7 +144,7 @@ public class MovieJson extends AppCompatActivity {
                 }else{
                     long resultado = filmesDAO.insert(filme);
                     if(resultado != -1){
-                        Snackbar.make(view, "Filme cadastrado com sucesso!", Snackbar.LENGTH_LONG)
+                        Snackbar.make(view, R.string.mensagemFilmeAdicionado, Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                     }else{
                         Snackbar.make(view, "Erro ao cadastrar filme!", Snackbar.LENGTH_LONG)

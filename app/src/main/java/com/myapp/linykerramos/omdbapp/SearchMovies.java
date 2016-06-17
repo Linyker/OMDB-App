@@ -62,9 +62,11 @@ public class SearchMovies extends Fragment {
         botaoBuscaFilme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                filmes.clear();//limpa o arrayList para uma nova consulta
                 String txtbusca = busca.getText().toString();
-                final String[] responseReturn = {""};
-                Log.e("URL",URL + txtbusca.replace(" ","+"));
+                final String[] responseReturn = {""};//resposta do retorno do json - retorna true ou false
+
                 JsonObjectRequest requisicao =
                         new JsonObjectRequest(
                                 Request.Method.GET,
@@ -86,15 +88,6 @@ public class SearchMovies extends Fragment {
                                                 JSONObject jsonObject = new JSONObject(String.valueOf(response));
                                                 JSONArray resultados = jsonObject.getJSONArray("Search");
 
-                                                /*
-                                                for (int i = 0; i < resultados.length();i++){
-                                                    JSONObject filme = resultados.getJSONObject(i);
-                                                    String titulo = filme.getString("Title");
-                                                    String poster = filme.getString("Poster");
-
-                                                    filmes[i] = titulo;
-                                                }*/
-
                                                 for (int i = 0; i < resultados.length();i++){
                                                     JSONObject filmeObject = resultados.getJSONObject(i);
                                                     Filme filme = new Filme();
@@ -109,7 +102,6 @@ public class SearchMovies extends Fragment {
 
                                                 FilmeAdapter adapterfilme = new FilmeAdapter(getContext(), filmes);
                                                 listView.setAdapter(adapterfilme);
-
 
                                                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                                     @Override
@@ -126,7 +118,6 @@ public class SearchMovies extends Fragment {
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }
-                                           // Log.e("FUNCIONOU",response.toString());
                                         }else{
                                             Toast.makeText(getContext(),"Não foi encontrado o filme!",Toast.LENGTH_LONG).show();
                                             //Log.e("ERRO RESPONSE",responseReturn[0]);

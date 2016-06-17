@@ -49,6 +49,13 @@ public class FilmesDAO {
         return resultado;
     }
 
+    public int delete(String id){
+        database = databaseHelper.getReadableDatabase();
+        int resultado = database.delete(DatabaseHelper.TABLE_FILME,DatabaseHelper.FILME_ID +" LIKE '%"+id+"%'",null);
+
+        return resultado;
+    }
+
     public boolean checkFilme(String id){
         database = databaseHelper.getReadableDatabase();
         Cursor cursor = null;

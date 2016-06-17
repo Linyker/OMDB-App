@@ -18,6 +18,12 @@
     <string name="title_activity_movie">Movie</string>
     <string name="resumoFilme">Resumo do Filme</string>
     <string name="infoGerais">Informações Gerais</string>
+
+    <string name="deletaFilme">Deseja realmente deletar o filme?</string>
+    <string name="confirmaDelete">Sim eu quero!</string>
+    <string name="cancelaDelete">Melhor não!</string>
+    <string name="mensagemFilmeDeletado">Filme deletado com sucesso!</string>
+    <string name="mensagemFilmeAdicionado">Filme adicionado com sucesso!</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
