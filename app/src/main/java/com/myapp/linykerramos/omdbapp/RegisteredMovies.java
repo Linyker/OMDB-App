@@ -3,13 +3,9 @@ package com.myapp.linykerramos.omdbapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +17,6 @@ import com.myapp.linykerramos.omdbapp.Adapter.FilmeAdapter;
 import com.myapp.linykerramos.omdbapp.DAO.FilmesDAO;
 import com.myapp.linykerramos.omdbapp.Model.Filme;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,7 +92,6 @@ public class RegisteredMovies extends Fragment {
 
         filmes = filmesDAO.getAllFilmes();
 
-        listView = (ListView) viewRegisteredMovies.findViewById(R.id.listaFilmeCadastrados);
         filmeAdapter = new FilmeAdapter(getContext(),filmes);
         listView.setAdapter(filmeAdapter);
         qtdFilmesCadastrados.setText(""+filmes.size());

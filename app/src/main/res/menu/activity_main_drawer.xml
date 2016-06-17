@@ -12,7 +12,7 @@
             android:id="@+id/registered_movies"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Filmes Cadastrados" />
-        
+
     </group>
 
 

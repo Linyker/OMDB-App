@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.android.volley.Network;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -23,7 +22,6 @@ import com.myapp.linykerramos.omdbapp.DAO.FilmesDAO;
 import com.myapp.linykerramos.omdbapp.Model.Filme;
 import com.myapp.linykerramos.omdbapp.Volley.CustomVolleyRequestImage;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 

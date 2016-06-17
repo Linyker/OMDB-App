@@ -13,6 +13,7 @@
         android:singleLine="true"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="2dp"
+        android:gravity="center"
         android:hint="@string/texto_nomeFilme">
 
         <requestFocus/>

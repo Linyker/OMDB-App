@@ -3,7 +3,6 @@ package com.myapp.linykerramos.omdbapp.DAO;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 /**
  * Created by Linyker Ramos on 14/06/2016.
