@@ -95,13 +95,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.registered_movies) {
             RegisteredMovies registeredMovies = new RegisteredMovies();
             fragmentTransaction.replace(R.id.fragment_container, registeredMovies).commit();
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
